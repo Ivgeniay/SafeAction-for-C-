@@ -60,6 +60,24 @@ Ley call our method:
     }
 ```
 
+Alternative way to subscribe:
+
+```csharp
+    cf.OnCharacterCreatedEvent.Subscribe(OnCharacterCreatedHandler);
+```
+
+The unsubscribe would look like this:
+
+```csharp
+    cf.OnCharacterCreatedEvent -= OnCharacterCreatedHandler;
+```
+
+or
+
+```csharp
+    cf.OnCharacterCreatedEvent.Unsubscribe(OnCharacterCreatedHandler);
+```
+
 ### Implementation
 
 SafeAction can also be overridden with the "=" sign by passing it a delegate of the same signature:
